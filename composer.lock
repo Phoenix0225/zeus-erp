@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "36793882908b6cbdd344b5a4840231db",
+    "content-hash": "0c0bee335b2ba7683f49394b0681892f",
     "packages": [
         {
             "name": "brick/math",
@@ -5996,6 +5996,97 @@
                 }
             ],
             "time": "2026-04-26T05:33:54+00:00"
+        },
+        {
+            "name": "zeus-erp/zeus-core",
+            "version": "dev-2-define-core-architecture",
+            "dist": {
+                "type": "path",
+                "url": "../zeus-core",
+                "reference": "5cb01bb2af0cccdf313ca61b327ace47a698e60a"
+            },
+            "require": {
+                "php": "^8.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zeus\\Core\\": "src/Zeus/Core/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Zeus\\Core\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "BUSL-1.1"
+            ],
+            "authors": [
+                {
+                    "name": "Francis Blanchette",
+                    "role": "Founder & Architect"
+                }
+            ],
+            "description": "Core engine of the Zeus ERP ecosystem.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "zeus-erp/zeus-laravel",
+            "version": "dev-4-construire-zeus",
+            "dist": {
+                "type": "path",
+                "url": "../zeus-laravel",
+                "reference": "48dfdbd3077854739b6c20cbd77ffdf00136c6e7"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.4",
+                "zeus-erp/zeus-core": "@dev"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^11.0",
+                "phpunit/phpunit": "^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Zeus\\Laravel\\Providers\\ZeusServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zeus\\Laravel\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Zeus\\Laravel\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "BSL-1.1"
+            ],
+            "authors": [
+                {
+                    "name": "Francis Blanchette",
+                    "role": "Founder & Architect"
+                }
+            ],
+            "description": "L'adaptateur Laravel 13 pour le moteur ERP metadata-driven Zeus Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         }
     ],
     "packages-dev": [
@@ -8284,8 +8375,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "zeus-erp/zeus-laravel": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

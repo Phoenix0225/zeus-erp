@@ -8,7 +8,8 @@
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.8",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "zeus-erp/zeus-laravel": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -82,5 +83,23 @@
         }
     },
     "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../zeus-laravel",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../zeus-core",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
